@@ -2,9 +2,20 @@ import math
 Number_a = float (input("Input a\n"))
 Number_b = float (input("Input b\n"))
 Number_c = float (input("Input c\n"))
-if Number_a < 0 or Number_b < 0 or Number_c < 0: 
-    print("Under the sign of the square root can be only a positive number or zero")
+if Number_a == 0:
+    Single_root = (-Number_c)/Number_b
+    print("Your root =",Single_root)
 else:
-    print("Square root of",Number_a,"=",math.sqrt(Number_a))
-    print("Square root of",Number_b,"=",math.sqrt(Number_b))
-    print("Square root of",Number_c,"=",math.sqrt(Number_c))
+    Discriminant = Number_b**2 - 4*Number_a*Number_c
+    print("Yout discriminant =",Discriminant)
+    if Discriminant < 0:
+        print("This equation has no roots")
+    elif Discriminant == 0:
+        Single_root = -Number_b/(2*Number_a)
+        print("Your root =",Single_root)
+    else:
+        First_root = (-Number_b-math.sqrt(Discriminant))/(2*Number_a)
+        Second_root = (-Number_b+math.sqrt(Discriminant))/(2*Number_a)
+        print("Your first root =",First_root)
+        print("Your second root =",Second_root)
+
